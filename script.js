@@ -24,19 +24,22 @@ function memeLettres(arr) {
   let arr1dest = arr1str.split("");
  console.log(arr0dest);
  console.log(arr1dest);
- console.log((arr0dest.indexOf(arr1dest[index])));
+ let tab = [];
  for (let j = 0; j < arr0dest.length; j++) {
-   if (arr0dest.indexOf(arr1dest[j]) == arr1dest) {
-     return true ;
-   } else 
-   { return false;
-
+   let fruit = (arr0dest.indexOf(arr1dest[j]));
+   console.log(arr0dest.indexOf(arr1dest[j])) > 0));
+   if ((arr0dest.indexOf(arr1dest[j])) > 0) {
+     return 
+     
    }
+  (arr0dest.indexOf(arr1dest[j]))
+   console.log(fruit);
+    //  tab.push(arr1dest[j]); 
    
- }
+   
 
 
-}
+
 console.log(memeLettres(["concupiscence", "sens"]));
 
 
