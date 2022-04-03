@@ -1,57 +1,64 @@
-// // algo 8 SOLUCE
+function meilleurInvestissement(arr){
+    
+    let grandeValeur = [];
+    for (let index = 1; index < arr.length; index++) {
+        if (arr[index - 1] < arr[index]) {
+            grandeValeur.push(arr[index])
+        }   
+    }
+    let bigValu = grandeValeur.sort();
+    let bigValue = bigValu[bigValu.length - 1];
+    console.log(bigValue);
 
-// function insere(arr, num) {
-
-//     let ordreTab = arr.sort((a, b) => a - b);
-//     ordreTab.push(num);
-//   let ordreAddTab = ordreTab.sort((a, b) => a - b);
-//   console.log(ordreAddTab);
-//   for (let index = 0; index < ordreAddTab.length; index++) {
-//       if (ordreAddTab[index] == num) {
-//           return index  
-//   }     
-//   }
-//   return ordreAddTab;   
-//     }
-
-// console.log(insere([30,45,87,96,54,29], 95));
-
-
-function memeLettres(arr) {
-  let arr0str = arr[0].toString().toLowerCase();
-  let arr1str = arr[1].toString().toLowerCase();
-  let arr0dest = arr0str.split("");
-  let arr1dest = arr1str.split("");
- console.log(arr0dest);
- console.log(arr1dest);
- let tab = [];
- for (let j = 0; j < arr0dest.length; j++) {
-   let fruit = (arr0dest.indexOf(arr1dest[j]));
-   console.log(arr0dest.indexOf(arr1dest[j])) > 0));
-   if ((arr0dest.indexOf(arr1dest[j])) > 0) {
-     return 
-     
-   }
-  (arr0dest.indexOf(arr1dest[j]))
-   console.log(fruit);
-    //  tab.push(arr1dest[j]); 
-   
-   
+    let petiteValeur = [];
+    for (let j = 1; j < arr.length; j++) {
+        if (arr[j - 1] > arr[j]) {
+            petiteValeur.push(arr[j])
+        }   
+    }
+  let minValu = petiteValeur.sort((a, b) => a - b);
+  let minValue = minValu[0]
+  console.log(minValue);
 
 
+ let indexBig = arr.indexOf(bigValue);
+ let indexSmall = arr.indexOf(minValue);
+ 
+    
 
-console.log(memeLettres(["concupiscence", "sens"]));
+let semaine = ["lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi", "dimanche"];
 
+return `Le meilleur coup à faire cette semaine était d'investir le ${semaine[indexSmall]} et de revendre le ${semaine[indexBig]} pour un bénéfice de ${ bigValue - minValue} !`
+//"Le meilleur coup à faire cette semaine était d'investir
+// le jeudi et de revendre le vendredi pour un bénéfice de 78."
+}
+
+
+console.log(meilleurInvestissement([50,10,20,2,80,60,20]));
 
 
 // ----------------- ÉNONCÉ -----------------
 
-// Créez un Algorithme qui prends un tableau qui contient deux chaines en parametre.
-// On doit vérifier si la premiere chaine contient au moins une fois toutes les
-// lettres de la seconde, si oui on retourne true, si non on retour false.
+// Vous avez 7 valeurs dans un tableau qui représente le cours de l'or pour les 
+// 7 jours d'une semaine.
+// Vous devez, grace à un algorithme, retourner le meilleur jour pour investir et 
+// le meilleur jour pour vendre.
+// Ici le meilleur jour pour investir est Jeudi(4eme valeur du tableau), avec un cours
+// à 2€ et le meilleur pour vendre est vendredi, avec un cours à 80 donc un bénéfice de 78€.
+
+// Voici ce que vous devez retourner : "Le meilleur coup à faire cette semaine était d'investir
+// le jeudi et de revendre le vendredi pour un bénéfice de 78."
+
+// Vous pouvez changer la tournure de la phrase mais vous devez obligatoirement
+// retourner le jour d'achat, le jour de vente, et le montantdu bénéfice.
+
+// Bon courage !
+
 
 // ----------------- CONSEILS -----------------
 
-// Boucle "for".
-// toLowerCase();
 // indexOf();
+// shift;
+// boucle for;
+// travaillez avec des tableaux;
+// push();
