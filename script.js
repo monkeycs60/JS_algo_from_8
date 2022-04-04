@@ -1,26 +1,28 @@
-function nbDeVoyelles(txt) {
-    const reg = /[aeiouAEIOU]/gm;
-  let result = txt.match(reg);
-   if (result.length === null ) {
-return 0;
-       
-   }
-   else {return result.length
-}
-// tab = 0;
-// for (let index = 0; index < txt.length; index++) {
+function abreviation(str) {
+    let nomInit = [];
+    let result = str.trim();
+    let espace = result.indexOf(" ");
+    let prenom = result.slice(0, espace);
     
-//     if (txt[index] == "a" || txt[index] == "e" || txt[index] == "i" || txt[index] == "o" || txt[index] == "u") {
-//         tab += 1;
-//     }
-// }
-// return tab;
-    
+for (let index = 0; index < result.length; index++) {
+    let regexp = /[a-zA-Z]+/g;
+    if (result[index] === " ") {
+        nomInit.push(result[index + 1]);
+    }   
 }
+let last = `${prenom} ${nomInit}.`;
+return last
+};
+
+console.log(abreviation("John Doe")); // John D.
+console.log(abreviation("Romy Schneider")); // Romy S.
+console.log(abreviation("             Alfred Hitchcock                 ")); // Alfred H.
+console.log(abreviation("Jean-Michel Luc"));
 
 
 
-console.log(nbDeVoyelles("jdhqgdqsghdakzejamazemlqksd")); // retourne 5
-console.log(nbDeVoyelles("Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus, aliquam?")); // retourne 28
-console.log(nbDeVoyelles("L’imagination gouverne le monde.")); // retourne 13
-console.log(nbDeVoyelles('zzzZZZzz'));
+// -----------------  Énoncé ------------------- //
+
+// Créez un algorithme qui va retourner l'abréviation d'un nom et prénom, qui va retourner "John D." quand on lui passe en argument "John Doe"
+
+// -----------------  Conseils ------------------- //
