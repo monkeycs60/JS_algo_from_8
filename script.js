@@ -1,12 +1,20 @@
 function nbDeVoyelles(txt) {
-tab = 0;
-for (let index = 0; index < txt.length; index++) {
-    
-    if (txt[index] == "a" || txt[index] == "e" || txt[index] == "i" || txt[index] == "o" || txt[index] == "u") {
-        tab += 1;
-    }
+    const reg = /[aeiouAEIOU]/gm;
+  let result = txt.match(reg);
+   if (result.length === null ) {
+return 0;
+       
+   }
+   else {return result.length
 }
-return tab;
+// tab = 0;
+// for (let index = 0; index < txt.length; index++) {
+    
+//     if (txt[index] == "a" || txt[index] == "e" || txt[index] == "i" || txt[index] == "o" || txt[index] == "u") {
+//         tab += 1;
+//     }
+// }
+// return tab;
     
 }
 
